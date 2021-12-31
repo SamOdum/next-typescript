@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next-TypeScript
 
-## Getting Started
+> A starter project that brings Nextjs and TypeScript together and makes them play nice with each other.
 
-First, run the development server:
+---
+
+## Overview
+
+This project bootstraps the technologies I usually use in building fast frontends and preconfigures them to interact seamlessly right out of the box. These technologies include.
+
+- Nextjs
+- TypeScript
+- Framer-motion
+- Jotai
+- Eslint
+- Prettier
+- Husky
+- Lint-staged
+- Nodemon
+
+Nextjs handles rendering my frontends as SSG or SSR pages while Framer motion provides fluid client-side animations. Jotai is my minimalistic global state powerhouse. And Typescript ensures far less bugs, if any, are pushed to production.
+Eslint and Prettier enforce code consistency which means your code style and presentation will be uniform throughtout the project - regardless of whether you're working solo or in a team.
+
+Lint-staged ensures that all your code is linted and checked by Prettier and Eslint. Husky is there to guarantee that each time you try to commit your code, it is meticulously squeezed through Lint-staged. This means you'll have an opportunity to address any errors or inconsistencies in your code _before_ it is commited. Nodemon provides a better developer experience with hot module reloading. It also provides a simpler way to deal with enviroment variables.
+
+## Get started
+
+This project includes an empty `.env.local` file to store environment variables. Should any development aspect require setting up environment variables, simply create them in this file. Once that is sorted, you're ready to go. Just run the following commands in order.
 
 ```bash
-npm run dev
-# or
+# Install dependencies
+yarn
+
+# Enable Husky
+yarn husky install
+
+# Start dev server
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Production
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Remember to build your typescript files into javascript before deployment. Just run the following command.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+```bash
+# Build production files
+yarn build
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+After your TypeScript compiles into JavaScript, you're ready to deploy everything in your build folder. Just go ahead and start your server.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+# Start production Server
+yarn start
+```
